@@ -8,7 +8,7 @@ const getApiBaseUrl = () => {
         return 'http://localhost:5000/api';
     } else {
         // REPLACE THIS URL WITH ACTUAL BACKEND DEPLOYMENT URL ON RENDER
-        return 'https://your-production-backend.onrender.com/api';
+        return 'https://weather-api-bva3.onrender.com/api';
     }
 };
 
