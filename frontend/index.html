@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather App</title>
+    <!-- Modern Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="app-body">
+    <div class="container">
+        <header>
+            <h1>Weather App</h1>
+        </header>
+
+        <!-- Search Input -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <!-- Temperature Toggle -->
+            <div class="toggle-container">
+                <span class="celsius active">°C</span>
+                <label class="switch">
+                    <input type="checkbox" id="unit-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="fahrenheit">°F</span>
+            </div>
+        </div>
+        
+        <!-- Loading UI -->
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Error Handling -->
+        <div id="error-message" class="error-message hidden"></div>
+
+        <!-- Main Weather Information -->
+        <div id="weather-card" class="weather-card hidden glassmorphism">
+            <div class="weather-main">
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <h2 id="city-name"></h2>
+                <div class="temp-container">
+                    <h1 id="temperature"></h1>
+                    <span id="temp-unit">°C</span>
+                </div>
+                <p id="weather-condition"></p>
+            </div>
+            <div class="weather-details">
+                <div class="detail-item">
+                    <i class="fas fa-tint"></i>
+                    <div>
+                        <p>Humidity</p>
+                        <p id="humidity" class="detail-value"></p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-wind"></i>
+                    <div>
+                        <p>Wind Speed</p>
+                        <p id="wind-speed" class="detail-value"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Last 5 Searched Cities -->
+        <div class="history-section">
+            <h3>Recent Searches</h3>
+            <div id="history-loader" class="loader small hidden">
+                <div class="spinner"></div>
+            </div>
+            <ul id="history-list" class="history-list">
+                <!-- Data populated dynamically via pure JS -->
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
